@@ -1,0 +1,150 @@
+@import url("animate.css");
+html,body{
+    font-family:  'Montaga', serif;
+    background-color:gainsboro;
+    margin: 0 auto;
+    max-width: 1500px;
+}
+/*styling of main container*/
+.container{
+    background-color:whitesmoke;
+    background-image: url(../images/transparent.png); /*Downloaded background Image from https://www.pngfly.com/png-lskrlr/download.html*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+/*Styling of Header*/
+header{
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+   background-color: #0f292f;
+}
+/*Styling of main area of webpage using grid*/
+.sectionsgrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin: 10px;
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+/*Styling of Footer*/
+footer {
+    text-align: center;
+    right: 10px;
+    left: 20px;
+    position: absolute;
+    margin-bottom: 30px;
+    color:black;
+}
+/*Styling for Javascript HTML pushed element*/
+.photo{
+    position: relative;
+    height: 220px;
+    border: 3.5px solid white;
+    background-size: 50%; 
+}
+
+.photo:after {
+    content: attr(name); /*taken reference from this and others on google https://developer.mozilla.org/en-US/docs/Web/CSS/attr*/
+    color: cadetblue;
+    font-weight: bolder;
+    position: absolute;
+    background-color: rgba(250, 250, 250, 0.75);
+    padding: 10px;
+    opacity: 1;
+}
+.photo:hover::after{
+    opacity: 0.9;
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+.photo:hover{
+    animation-name: flash;
+    animation-duration: 1s;
+    -webkit-animation-name: bounce;
+    -webkit-animation-duration: 1s;
+    transition: 0.7s;
+}
+/*Taken reference to create model image and its elements from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img
+*
+*
+*/
+
+/*Backgronud of the image*/
+.thumbnail {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    backface-visibility: hidden;
+    background-color: rgba(248, 245, 245, 0.9);
+    background-size: 100%;
+    padding-top: 50px;
+}
+
+  
+.picture {
+    display: block;
+    margin: auto;
+    width: 70%;
+    max-height: 600px;
+    max-width: 750px;
+}
+.picture:hover{
+    animation-name: pulse;
+    animation-duration: 2s;
+    -webkit-animation-name: pulse;
+    -webkit-animation-duration: 2s;
+    transition: 2s;
+
+}
+
+.thumbnailname {
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    color:whitesmoke;
+    font-size: 28px;;
+    background-color:cadetblue;
+    max-width: 350px;
+    padding: 10px;
+    font-weight: bold;
+}
+
+
+/*Taken reference from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img*/
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    font-weight:bolder;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.picture, .thumbnailname {  
+    animation-name: zoomIn;
+    animation-duration: 0.7s;
+    -webkit-animation-name: zoomIn;
+    -webkit-animation-duration: 0.7s;
+    
+  }
+  
+
+
+
+
+
